@@ -1,11 +1,10 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import Navbar from './components/Navbar'
 import { Outlet, useLocation } from 'react-router-dom'
 import NoteState from './context/notes/noteState'
 import { LoginProvider } from './context/notes/loginContext'
 import earth from './img/earth.mp4'
 import weather from './img/weather.mp4'
-import video from "./videoplayback.mp4"
 
 const Layout = () => {
     const location = useLocation()

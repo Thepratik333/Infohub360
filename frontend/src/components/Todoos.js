@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Notes from './Notes';
 import Alert from './Alert';
 import { useLocation } from 'react-router-dom';

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoUri = "mongodb://localhost:27017/pratik";
+const mongoUri = "mongodb://0.0.0.0:27017/pratik";
 
 const connectmongo = () => {
   mongoose.connect(mongoUri);

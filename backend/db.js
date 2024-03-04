@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoUri = "mongodb://[::1]:27017/pratik";
+const mongoUri = "mongodb://127.0.0.1:27017/pratik";
 
 const connectmongo = () => {
   mongoose.connect(mongoUri);

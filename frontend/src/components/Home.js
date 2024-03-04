@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLocation } from "react-router-dom";
@@ -15,8 +15,11 @@ import converter from "../img/converter.png";
 const Home = () => {
     const location = useLocation();
     let home = location.pathname.startsWith("/");
-    const loaderTimeline = gsap.timeline();
-    
+    const [isLoading, setIsLoading] = useState(home);
+
+    const loaderTimeline = gsap.timeline({
+        onRepeat: () => setIsLoading(false),
+    })    
     useEffect(() => {
         
         
@@ -38,6 +41,7 @@ const Home = () => {
                 opacity: 0,
                 display: "none",
             });
+            // setIsLoading(false)  
         }
 
         gsap.registerPlugin(ScrollTrigger);
@@ -116,15 +120,17 @@ const Home = () => {
             cursorBlur.style.top = e.y + "px";
         });
 
-    }, []);
+    }, [home, loaderTimeline]);
 
     return (
         <>
+        {isLoading && (
             <div id="loader">
                 <p className="h4">Loading the Gateway</p>
-                <p className="h4"> To</p>
+                <p className="h4">To</p>
                 <p className="h4">Your InfoHub Experience...</p>
             </div>
+        )}
             <div className="main">
                 <div className="cursor">
                     <span style={{ userSelect: "none" }}>360</span>
@@ -225,7 +231,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div id="page3" style={{padding: "30px", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                    <div className="container d-flex justify-content-center align-items-center">
+                    <div className="contact container">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 563" fill="none">
                             <g id="Image">
                                 <g id="g14">

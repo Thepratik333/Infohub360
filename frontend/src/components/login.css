@@ -15,7 +15,9 @@ body {
   background-repeat: no-repeat;
 } */
 
-.login-container {
+
+
+.login-box {
   position: absolute;
   left: 50%;
   background-color: #fff;
@@ -99,12 +101,6 @@ button:hover {
 }
 
 /* Responsive */
-@media screen and (max-width: 600px) {
-  .login-container {
-    width: 100%;
-    border-radius: 0;
-  }
-}
 
 
 .bn632-hover {
@@ -145,4 +141,34 @@ button:hover {
       #f24645
     );
   box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
+
+
+@media only screen and (max-width: 430px) {
+  .login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 78vh;
+    width: 100%;
+    padding-top: 155px;
+  }
+  .login-box{
+    position: unset;
+    margin: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px 40px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body{
+    background-image: unset;
+    background-position: unset;
+    }
 }

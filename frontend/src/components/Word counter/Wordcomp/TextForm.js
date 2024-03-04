@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Alert from './Alert';
 
 export default function TextForm() {
   
@@ -50,6 +51,8 @@ export default function TextForm() {
   const [text ,setText] = useState("");
   // const [char, lenChar] = useState(0);
   return (
+    <>
+    <Alert alert={alert} />
     <div style={{paddingTop: "100px"}}>
     <div className="container text-dark">
     <div className="mb-3 my-3">
@@ -78,6 +81,7 @@ export default function TextForm() {
     <p>{text===''?'Enter something in above box':text}</p>
   </div>
   </div>
+  </>
   )
 }
 

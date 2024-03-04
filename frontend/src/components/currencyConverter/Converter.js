@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import InputBox from './currency/InputBox'
 import useCurrencyInfo from './hooks/useCurrencyInfo'
-import {useLocation} from 'react-router-dom'
 // import currency from '../../img/currency.jpg'
 // import inr from '../../img/inr.jpg'
 // import inr1 from '../../img/inr2.jpg'
@@ -14,7 +13,7 @@ function Converter() {
   const [from, setFrom] = useState("usd")
   const [to, setTo] = useState("inr")
   const [convertedAmount, setConvertedAmount] = useState(0)
-  let location = useLocation();
+//   let location = useLocation();
 
   const currencyInfo = useCurrencyInfo(from)
 

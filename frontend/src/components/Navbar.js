@@ -36,11 +36,11 @@ const Navbar = () => {
         <div className="container-fluid fsize">
           <div className="title fsize">
             <Link className="navbar-brand" style={isNewsRoute || islogin || isignup || isword || isweather || iscurrency? {color: "black"}: {color:'white'}} to="/"><span>InfoHub</span><span>360</span></Link>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
+            <button className="nav-toggle" type="button">
+            <i className="fa fa-bars"></i>
             </button>
           </div>
-          {isNewsRoute ? <div className="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
+          {isNewsRoute ? <div className="nav-toggle">
             <ul className="navbar-nav mr-auto" style={isNewsRoute || islogin || isignup || isword || isweather || iscurrency? {color: "black"}: {color:'white'}}>
               <li className="nav-item">
                 <Link className="nav-link" to="/" style={isNewsRoute || islogin || isignup || isword || isweather || iscurrency? {color: "black"}: {color:'white'}}>Home </Link>
@@ -87,7 +87,7 @@ const Navbar = () => {
             </form>
           </div> :
             <div className="items fsize">
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <div className="nav-toggle">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item">
                     <Link style={isNewsRoute || islogin || isignup || isword || isweather || iscurrency? {color: "black"}: {color:'white'}} className={`nav-link ${location.pathname === "/" ? "" : ""}`} aria-current="page" to="/">Home</Link>

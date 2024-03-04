@@ -134,3 +134,14 @@
     display: flex;
     justify-content: end;
   }
+
+  @media only screen and (max-width: 430px) {
+    .temp-title{
+      font-size: 85px;
+    }
+    #search-form{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }

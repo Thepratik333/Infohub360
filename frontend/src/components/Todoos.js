@@ -12,7 +12,7 @@ const Todoos = () => {
       let video = document.getElementsByClassName('video-background')
       video.remove();
     }
-  },[])
+  },[Todoos])
   return (
     <div>
     <Alert/>

@@ -31,19 +31,12 @@ const Forecast = ({ ApiFetch }) => {
   // console.log(year)
   const hours = currentTime.getHours();
   const minutes = currentTime.getMinutes();
-  const seconds = currentTime.getSeconds();
+  // const seconds = currentTime.getSeconds();
   const hours12 = hours % 12 || 12; // Ensure 12 is displayed for 0
   const ampm = hours >= 12 ? 'PM' : 'AM'
 
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const weather = {
-    cloud: "https://img.icons8.com/color-glass/42/000000/cloud.png",
-    rain: "https://img.icons8.com/color-glass/42/000000/rain.png",
-    party_cloud: "https://img.icons8.com/color-glass/42/000000/partly-cloudy-day.png",
-    sun: "https://img.icons8.com/color-glass/42/000000/sun.png",
-    wind: "https://img.icons8.com/color-glass/42/000000/wind.png"
-  }
-
+ 
   const d = new Date();
 
   const month = d.getMonth() + 1;
@@ -60,7 +53,7 @@ const Forecast = ({ ApiFetch }) => {
   }
 
   const fromatedTime = `${hours12}:${minutes}${ampm}`
-  const list = ApiFetch && ApiFetch.list ? ApiFetch.list.filter(item => item.dt_txt.substr(0, 10) === `2024-0${month}-${dayDate}`) : [];
+  // const list = ApiFetch && ApiFetch.list ? ApiFetch.list.filter(item => item.dt_txt.substr(0, 10) === `2024-0${month}-${dayDate}`) : [];
 
   return (
     <main style={{paddingTop: "100px"}}>
@@ -127,6 +120,7 @@ const Forecast = ({ ApiFetch }) => {
             <h3>{week.a.toLocaleDateString('en-US', { weekday: 'long' })}</h3>
             <br /><img
               src="https://img.icons8.com/color-glass/42/000000/rain.png"
+              alt='Rain Icon'
             /><br />
             <p className="weather">Rain</p>
             <span>2°</span>
@@ -135,6 +129,7 @@ const Forecast = ({ ApiFetch }) => {
             <h3>{week.b.toLocaleDateString('en-US', { weekday: 'long' })}</h3>
             <br /><img
               src="https://img.icons8.com/color-glass/42/000000/cloud.png"
+              alt='Cloudy Icon'
             /><br />
             <p className="weather">Cloudy</p>
             <span>4°</span>
@@ -143,6 +138,7 @@ const Forecast = ({ ApiFetch }) => {
             <h3>{week.c.toLocaleDateString('en-US', { weekday: 'long' })}</h3>
             <br /><img
               src="https://img.icons8.com/color-glass/42/000000/partly-cloudy-day.png"
+              alt='Partly Cloudy Icon'
             /><br />
             <p className="weather">Partly cloudy</p>
             <span>6°</span>
@@ -151,6 +147,7 @@ const Forecast = ({ ApiFetch }) => {
             <h3>{week.d.toLocaleDateString('en-US', { weekday: 'long' })}</h3>
             <br /><img
               src="https://img.icons8.com/color-glass/42/000000/sun.png"
+              alt='Sunny Icon'
             /><br />
             <p className="weather">Sunny</p>
             <span>8°</span>
@@ -159,6 +156,7 @@ const Forecast = ({ ApiFetch }) => {
             <h3>{week.e.toLocaleDateString('en-US', { weekday: 'long' })}</h3>
             <br /><img
               src="https://img.icons8.com/color-glass/42/000000/wind.png"
+              alt='Wind Icon'
             /><br />
             <p className="weather">Windy</p>
             <span>5°</span>
@@ -167,6 +165,7 @@ const Forecast = ({ ApiFetch }) => {
             <h3>{week.f.toLocaleDateString('en-US', { weekday: 'long' })}</h3>
             <br /><img
               src="https://img.icons8.com/color-glass/42/000000/wind.png"
+              alt='Night Icon'
             /><br />
             <p className="weather">Windy</p>
             <span>5°</span>

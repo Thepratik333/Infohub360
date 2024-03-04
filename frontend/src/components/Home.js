@@ -16,27 +16,28 @@ const Home = () => {
     const location = useLocation();
     let home = location.pathname.startsWith("/");
     const loaderTimeline = gsap.timeline();
-
+    
     useEffect(() => {
-        loaderTimeline.from("#loader p", {
-            x: 100,
-            opacity: 0,
-            duration: 2,
-            stagger: 0.1,
-        });
-        loaderTimeline.to("#loader p", {
-            x: -100,
-            opacity: 0,
-            stagger: 0.1,
-        });
-        loaderTimeline.to("#loader", {
-            opacity: 0,
-            display: "none",
-        });
-
+        
+        
         if (home) {
             document.body.style.backgroundImage = null;
             document.body.style.backgroundPosition = null;
+            loaderTimeline.from("#loader p", {
+                x: 100,
+                opacity: 0,
+                duration: 2,
+                stagger: 0.1,
+            });
+            loaderTimeline.to("#loader p", {
+                x: -100,
+                opacity: 0,
+                stagger: 0.1,
+            });
+            loaderTimeline.to("#loader", {
+                opacity: 0,
+                display: "none",
+            });
         }
 
         gsap.registerPlugin(ScrollTrigger);
@@ -114,6 +115,7 @@ const Home = () => {
             cursorBlur.style.left = e.x + "px";
             cursorBlur.style.top = e.y + "px";
         });
+
     }, []);
 
     return (

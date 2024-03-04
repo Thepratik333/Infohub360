@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "framer-motion": "^10.18.0",
-    "mongodb": "^6.4.0",
     "react-locomotive-scroll": "^0.2.2"
   }
 }

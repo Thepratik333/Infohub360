@@ -4,10 +4,17 @@ var cors = require('cors')
 connectmongo();
 
 const app = express()
-const port = 5000
- 
-app.use(cors())
+const port = process.env.PORT || 5000;
 
+const corsOptions = {
+  origin: 'https://infohub360.onrender.com', // Change to your frontend URL in production
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
+ 
 app.use(express.json());
 
 app.use('/api/auth',require('./routes/auth'))

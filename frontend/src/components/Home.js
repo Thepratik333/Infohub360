@@ -15,11 +15,9 @@ import converter from "../img/converter.png";
 const Home = () => {
     const location = useLocation();
     let home = location.pathname.startsWith("/");
-    const [isLoading, setIsLoading] = useState(home);
+    // const [isLoading, setIsLoading] = useState(home);
 
-    const loaderTimeline = gsap.timeline({
-        onRepeat: () => setIsLoading(false),
-    })    
+    const loaderTimeline = gsap.timeline()    
     useEffect(() => {
         
         
@@ -124,13 +122,7 @@ const Home = () => {
 
     return (
         <>
-        {isLoading && (
-            <div id="loader">
-                <p className="h4">Loading the Gateway</p>
-                <p className="h4">To</p>
-                <p className="h4">Your InfoHub Experience...</p>
-            </div>
-        )}
+
             <div className="main">
                 <div className="cursor">
                     <span style={{ userSelect: "none" }}>360</span>
@@ -582,3 +574,11 @@ const Home = () => {
 };
 
 export default Home;
+
+// {isLoading && (
+    //     <div id="loader">
+    //         <p className="h4">Loading the Gateway</p>
+    //         <p className="h4">To</p>
+    //         <p className="h4">Your InfoHub Experience...</p>
+    //     </div>
+    // )}
